@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grocery Market Budget &amp; Forecast Tool</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="logo">🛒</span>
+      <div>
+        <h1>Grocery Market Budget &amp; Forecast</h1>
+        <p class="subtitle">Sales · Gross · Labor — 6 markets, by department, weekly with daily distribution</p>
+      </div>
+    </div>
+    <div class="week-picker">
+      <label for="weekInput">Budget week (Mon&ndash;Sun)</label>
+      <input type="date" id="weekInput" />
+      <span id="weekLabel" class="week-label"></span>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-tab="budget">Budget</button>
+    <button class="tab" data-tab="forecast">Forecast</button>
+    <button class="tab" data-tab="daily">Daily Distribution</button>
+    <button class="tab" data-tab="import">Import Prior-Year Data</button>
+    <button class="tab" data-tab="setup">Setup</button>
+  </nav>
+
+  <main id="view"></main>
+
+  <footer class="app-footer">
+    <span>Data is saved locally in this browser.</span>
+    <div class="footer-actions">
+      <button id="exportBtn" class="btn-ghost">Export data (JSON)</button>
+      <button id="resetBtn" class="btn-ghost danger">Reset all data</button>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/state.js"></script>
+  <script src="js/distribution.js"></script>
+  <script src="js/calc.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
